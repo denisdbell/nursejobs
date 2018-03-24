@@ -4,12 +4,9 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>jobs</groupId>
-  <artifactId>spring-boot-mysql-springdatajpa-hibernate</artifactId>
+  <artifactId>saved-jobs</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-
-  <name>spring-boot-mysql-springdatajpa-hibernate</name>
-  <description>Use Spring Data JPA + Hibernate + MySQL in Spring Boot</description>
-
+  
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>

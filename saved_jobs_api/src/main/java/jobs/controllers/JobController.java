@@ -65,4 +65,5 @@ public class JobController {
 
   @Autowired
   private LocationDao locationDao;
+  
 } // class JobController

@@ -157,5 +157,5 @@ public class Job {
   public void setLocations(List<Location> locations) {
     this.locations = locations;
   }
-
+  
 } // class Job
