@@ -1,13 +1,9 @@
 package netgloo.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
-
+import java.util.List;
 
 /**
  * An Job entity
@@ -60,7 +56,11 @@ public class Job {
   @NotNull
   private String url;
 
- 
+  
+  @OneToMany(cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY, mappedBy = "job")
+  private List<Location> locations;
+
   // ------------------------
   // PUBLIC METHODS
   // ------------------------
@@ -142,12 +142,20 @@ public class Job {
   }
 
 
-   public String getURl(){
+  public String getUrl(){
     return this.url;
   }
   
-  public void setURL(String url){
+  public void setUrl(String url){
     this.url = url;
+  }
+
+  public List<Location> getLocations(){
+    return this.locations;
+  }
+
+  public void setLocations(List<Location> locations){
+    this.locations = locations;
   }
 
 } // class Job
