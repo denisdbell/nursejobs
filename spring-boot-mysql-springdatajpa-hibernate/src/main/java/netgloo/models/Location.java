@@ -3,6 +3,7 @@ package netgloo.models;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 /**
@@ -55,6 +56,7 @@ public class Location {
     this.name = name;
   }
 
+  @JsonIgnore
   public Job getJob(){
     return this.job;
   }

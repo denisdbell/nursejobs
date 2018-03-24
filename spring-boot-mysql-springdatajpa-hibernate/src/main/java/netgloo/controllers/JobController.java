@@ -34,15 +34,19 @@ public class JobController {
 
       List<Location> locations = job.getLocations();
 
-      for(Location location : locations){
-          locations.get(location).set(job);
-      }
-
-      job.setLocations( locations );
-      
-      locationDao.save(locations);
+      job.setLocations(null);
 
       newJob = jobDao.save(job);
+
+      for(int x = 0; x < locations.size() ; x++){
+          locations.get(x).setJob(newJob);
+      }
+
+      locationDao.save(locations);
+
+      //job.setLocations( locations );
+      
+      
     }
     catch (Exception ex) {
       return "Error creating the job: " + ex.toString();
