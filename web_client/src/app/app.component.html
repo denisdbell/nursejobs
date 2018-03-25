@@ -34,9 +34,7 @@
   </div>
   <div class="cover"></div>
   <div class="box">
-    <h1>let's find you
-      <em>The best nursing job in the WORLD!</em>
-    </h1>
+    <h1>Enter your dream job and location</h1>
     <input class="search_two ui-autocomplete-input" [ngModel]="criteria" (ngModelChange)="criteria = $event" type="text" placeholder="your next job?" autocomplete="off">
     <input class="search_two ui-autocomplete-input" [ngModel]="location" (ngModelChange)="location = $event" type="text" placeholder="Location?" autocomplete="off">
     <button class="button" (click)="search()">Search</button>
@@ -107,10 +105,22 @@
           </td>
           <td class="company position company_and_position">
             <a itemprop="url" class="preventLink" href="{{job.url}}">
-              <h2 itemprop="title">{{job.position_title}}</h2>
+              <h2 itemprop="title" [innerHTML]="job.position_title"></h2>
             </a>
             <br>
             <h3 itemprop="name">{{job.organization_name}}</h3>
+            <br>
+            <h3 itemprop="name"> <strong>Date: </strong> {{job.start_date}} to {{job.end_date}}</h3>
+            <br>
+            <h3 itemprop="name"> <strong>Salary: </strong>{{job.minimum  | currency:'USD' }} to {{job.maximum  | currency:'USD'}}</h3>
+            <br>
+            <h3 itemprop="name"> 
+                <strong>Location: </strong>
+                <span *ngFor="let location of job.locations; let index = index">
+                  {{location}}
+                </span>
+            </h3>
+
           </td>
           <td class="source">
             <a rel="nofollow" class="no-border tooltip" target="_blank" href="/l/66046">
