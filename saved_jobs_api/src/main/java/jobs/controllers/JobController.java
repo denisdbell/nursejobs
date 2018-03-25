@@ -10,6 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,10 +62,18 @@ public class JobController {
     return jobs;
   }
 
+  @RequestMapping(value = "job/delete/{id}")
+  @ResponseBody
+  public void delete(@PathVariable Long id) {
+
+    jobDao.delete(id);
+
+  }
+
   @Autowired
   private JobDao jobDao;
 
   @Autowired
   private LocationDao locationDao;
-  
+
 } // class JobController

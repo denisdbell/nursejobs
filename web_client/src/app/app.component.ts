@@ -34,22 +34,42 @@ export class AppComponent {
     console.log(job);
     this.saveJobService.save(job).subscribe(
       data => {
-        console.log(data);
+        this.loadSavedJobs();
+      },
+      err => console.log("An error ocurred")
+    );
+  }
+
+  loadInitialData() {
+    this.loadGovernmentJobs();
+    this.loadSavedJobs();
+  }
+
+  loadGovernmentJobs() {
+    this.jobService.fetchAll().subscribe(
+      data => {
+        this.jobs = data;
+      },
+      err => console.log("Error occurred")
+    );
+  }
+
+  loadSavedJobs() {
+    this.saveJobService.fetchAll().subscribe(
+      data => {
+        this.savedJobs = data;
       },
       err => console.log("Authentication Complete")
     );
   }
 
-  loadInitialData() {
-    this.jobService.fetchAll().subscribe((data: Job[]) => (this.jobs = data));
-    this.saveJobService
-      .fetchAll()
-      .subscribe(
-        data => {
-          this.savedJobs = data
-        },
-        err => console.log("Authentication Complete")
-      );
+  deleteSavedJob(id:number) {
+    this.saveJobService.delete(id).subscribe(
+      data => {
+        this.loadSavedJobs();
+      },
+      err => console.log("Authentication Complete")
+    );
   }
 
   toggleSavedJobs() {

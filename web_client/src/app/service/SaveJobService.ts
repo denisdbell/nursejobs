@@ -15,6 +15,13 @@ export class SaveJobService {
     return this.http.post(this.apiEndPointHost + "/job/create", job, options);
   }
 
+  delete(id: number) {
+    let headers = new Headers();
+    headers.append("Content-Type", "application/json");
+    let options = new RequestOptions({ headers: headers });
+    return this.http.delete(this.apiEndPointHost + "/job/delete/"+id, options);
+  }
+
   fetchAll() {
     let headers = new Headers();
 
