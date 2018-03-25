@@ -24,7 +24,7 @@ public class JobController {
 
   @RequestMapping("/job/create")
   @ResponseBody
-  public String create(@RequestBody Job job) {
+  public Job create(@RequestBody Job job) {
     Job newJob = null;
     try {
 
@@ -41,9 +41,9 @@ public class JobController {
       locationDao.save(locations);
 
     } catch (Exception ex) {
-      return "Error creating the job: " + ex.toString();
+      return null;
     }
-    return "Job succesfully created! (id = " + newJob.getId() + ")";
+    return newJob;
   }
 
   @RequestMapping("job/list")

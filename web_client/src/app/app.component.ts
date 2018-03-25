@@ -10,8 +10,10 @@ import { SaveJobService } from "./service/SaveJobService";
 })
 export class AppComponent {
   jobs: Job[];
+  savedJobs: Job[];
   criteria: string;
   location: string;
+  showSavedJobs: boolean = false;
 
   constructor(
     private jobService: JobService,
@@ -29,11 +31,28 @@ export class AppComponent {
   }
 
   saveJob(job: Job) {
-    console.log("Save pressed");
-    this.saveJobService.save(job);
+    console.log(job);
+    this.saveJobService.save(job).subscribe(
+      data => {
+        console.log(data);
+      },
+      err => console.log("Authentication Complete")
+    );
   }
 
   loadInitialData() {
     this.jobService.fetchAll().subscribe((data: Job[]) => (this.jobs = data));
+    this.saveJobService
+      .fetchAll()
+      .subscribe(
+        data => {
+          this.savedJobs = data
+        },
+        err => console.log("Authentication Complete")
+      );
+  }
+
+  toggleSavedJobs() {
+    this.showSavedJobs = !this.showSavedJobs;
   }
 }
