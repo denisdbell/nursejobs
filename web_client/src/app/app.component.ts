@@ -8,18 +8,23 @@ import { JobService } from "./service/JobService";
   providers: [JobService]
 })
 export class AppComponent {
-
   jobs: Job[];
+  criteria: string;
+  location: string;
 
   constructor(private jobService: JobService) {
     this.loadInitialData();
-        
+
     console.log("Jobs" + this.jobs);
   }
 
+  search() {
+    this.jobService
+      .fetchByCriteriaAndLocation(this.criteria, this.location)
+      .subscribe((data: Job[]) => (this.jobs = data));
+  }
+
   loadInitialData() {
-    this.jobService.fetchAll()
-    .subscribe((data: Job[]) =>  this.jobs = data );
+    this.jobService.fetchAll().subscribe((data: Job[]) => (this.jobs = data));
   }
 }
-

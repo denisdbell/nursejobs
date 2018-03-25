@@ -1,143 +1,128 @@
-<script>var basicPrice=299;	var priceForHighlightedExtra=50;	var originalUrl='/';	var page='frontpage';	var pageTagTitle='';	var allTags = ['specialist','Dialysis Registered Nurse','Neonatal Intensive Care Registered Nurse','Nurse Supervisor'];	var sampleJobs = ['specialist','Dialysis Registered Nurse','Neonatal Intensive Care','Nurse Supervisor'];	var stripePublicKey='pk_live_T0LvYdi04UxgmrfEx4LRid4q';	var tweetJob = [];</script><script src="./assets/index.min.js"></script><script>var sampleJobs=shuffle(sampleJobs);</script><script></script>
-      <div class="filter-pane opened" id="filter-pane">
-         <select class="filter filter-source" id="filter-source">
-            <option value="" selected="">Source</option>
-            <option data-filter-target="source" data-filter-type="less-than" data-filter-value="Stack Overflow">Stack Overflow</option>
-            <option data-filter-target="source" data-filter-type="less-than" data-filter-value="WFH">WFH</option>
-            <option data-filter-target="source" data-filter-type="less-than" data-filter-value="We Work Meteor">We Work Meteor</option>
-            <option data-filter-target="source" data-filter-type="less-than" data-filter-value="Remote OK">Remote OK</option>
-            <option data-filter-target="source" data-filter-type="less-than" data-filter-value="GoLang Projects">GoLang Projects</option>
-            <option data-filter-target="source" data-filter-type="less-than" data-filter-value="GitHub">GitHub</option>
-            <option value="remove-filter">✖ remove</option>
-         </select>
-         <select class="reverse filter add-filter" id="add-filter">
-            <option>✚ add filter</option>
-         </select>
-      </div>
-      <i class="fa fa-navicon action-expand-filter"></i>
-      <div class="top">
-         <div class="remote-ok-logo">
-            <h1><a class="no-border" ><span class="pacifico">Nursing Jobs</span></a><a class="no-border" ><span class="ok">Finding your dream job has never been easier</span></a></h1>
-         </div>
-         <div class="video" style="top: 0px;">
-            <video id="videoObj" autoplay="" muted="" loop="" data-src="/assets/bg.mp4" type="video/mp4"></video>
-         </div>
-         <div class="cover"></div>
-         <div class="box">
-            <h1>let's find you <em>The best nursing job in the WORLD!</em></h1>
-            <input class="search_two ui-autocomplete-input" type="text" placeholder="your next job?" autocomplete="off">
-            <input class="search_two ui-autocomplete-input" type="text" placeholder="Location?" autocomplete="off">
-            
-          </div>
-         <div class="bottom-notice">
-            <h2 class="p">The largest collection of  Jobs for Digital Nurses online. Let's find you a job you can do anywhere at <a href="https://remoteok.io/remote-companies">Remote Companies</a> like <a href="https://remoteok.io/remote-companies/buffer">Buffer</a>, <a href="https://remoteok.io/remote-companies/zapier">Zapier</a> and <a href="https://remoteok.io/remote-companies/automattic">Automattic</a> who <a target="_blank" href="https://www.youtube.com/watch?v=4p8a0tcJw4s">embrace the future</a>. There are 28,600+ jobs that allow you to work anywhere and live everywhere.</h2>
-         </div>
-      </div>
-      <div class="notice">
-         <div class="remote-ok-logo">
-            <h1><a class="no-border" href="https://remoteok.io/"><span class="pacifico">Remote</span></a><a class="no-border" href="https://remoteok.io/remote-jobs"><span class="ok">OK</span></a></h1>
-         </div>
-         <h2 class="p">The largest collection of Remote Jobs for Digital Nomads online. Let's find you a job you can do anywhere at <a href="https://remoteok.io/remote-companies">Remote Companies</a> like <a href="https://remoteok.io/remote-companies/buffer">Buffer</a>, <a href="https://remoteok.io/remote-companies/zapier">Zapier</a> and <a href="https://remoteok.io/remote-companies/automattic">Automattic</a> who <a target="_blank" href="https://www.youtube.com/watch?v=4p8a0tcJw4s">embrace the future</a>. There are 28,600+ jobs that allow you to work anywhere and live everywhere.</h2>
-         <div class="bg"></div>
-      </div>
-      <div class="page">
-        
-         <div class="clear"></div>
-         <div class="switcher-container">
-            <div class="switcher">
-               <div class="action-switch-jobs active">
-                  <p><i class="fa fa-briefcase"></i>&nbsp;	Jobs</p>
-               </div>
-               <div class="action-switch-people">
-                  <p><i class="fa fa-user"></i>&nbsp;	People</p>
-               </div>
-            </div>
-         </div>
-         <div class="container">
-            <div class="catch-emails" data-tag="">
-               <form action="https://remoteok.io/emails/subscribe/">
-                  <p>
-                     <span style="">
-                        Get a <span class="weekly" style="display:none">weekly</span>
-                        <select name="TIME" id="mce-TIME">
-                           <option selected="">daily</option>
-                           <option>weekly</option>
-                           <option>monthly</option>
-                        </select>
-                        &nbsp;email<span class="block"></span>&nbsp;of all new remote&nbsp;jobs<input type="hidden" name="JOBTYPE" id="mce-JOBTYPE" value="jobs">
-                     </span>
-                  </p>
-                  <span class="mobile"></span><input type="text" name="FNAME" class="fname" id="mce-FNAME" placeholder="Name"><input type="text" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Email"><input type="hidden" name="SOURCE" id="mce-SOURCE" value=""><input type="hidden" name="TAG" id="mce-TAG" value=""><button class="button">Subscribe</button>
-               </form>
-            </div>
-            <table id="jobsboard">
-                <tbody>
-                   <tr>
-                      <td colspan="999" class="heading">
-                         <h2>Search Results {{jobs}}</h2>
-                      </td>
-                   </tr>
-                   <script type="application/ld+json">{"@context":"http://schema.org","@type":"JobPosting","datePosted":"2018-03-23T08:54:34-07:00","description":"Senior Software Engineer (React, Redux)\n\nSlashData is the leading research company in the developer economy: We help the world understand developers and developers understand the world. We survey 40,000+ developers annually - across mobile, IoT, desktop, cloud AR\/VR and machine learning - to help clients such as Microsoft, Facebook, Google and Amazon understand who developers are, what tools they love or hate and where they are going next.\n\nWe\u2019re now looking for a full-time, senior software engineer to help drive data and visual insights out of millions of developer data points. The position is fulltime, either remote or based in our Athens office (if you happen to live near). We will consider locations within 2-3 hours of Central European Time or further for candidates willing to shift their working day to have significant overlap with the other team members in Europe. Depending on your location, you will be working from your home office, a co-working space as part of a distributed team or our Athens office.\n\nWho we\u2019re looking for\n\nWhat skills we are looking for\n5+ years of experience developing web applications with modern JavaScript (ES6) frameworks\nExperience with React, Redux, webpack and related technologies\nFamiliarity with testing tools such as Mocha, Chai, Jest\nAppreciation for good UX &amp; UI design, ability to contribute to a design discussion\nBackend web API development experience, preferably with some exposure to Node.js\nExperience with AWS and other cloud providers\nExperience with a language other than JavaScript, preferably one with static types\nExperience working with relational and NoSQL databases\n\nBonus points for\nHaving built single-page web apps and server-side rendered apps\nExperience with AWS Lambda or other \u201cserverless\u201d backend architecture\nExperience with Python\nHave worked with an intermediate data layer, that sits between multiple data sources and the front-end applications\nExperience with data visualisation (e.g. using D3.js)\nAn appreciation for data and understanding of statistics\n\nWhat you\u2019ll be responsible for\n\nBuilding a custom data dashboard web app (backend in Python and frontend in React) for displaying data to clients and developers. There are lots of dashboard tools in the world, but we have fairly rare data needs and an ambition to create world-class visualisations.\nIterating on our in-house survey tool (built on AWS Lambda, React and Redux) to reach developers everywhere in the world and provide a delightful UX.\nMaintaining and enhancing our developer and client-facing websites. We\u2019ve deployed \u2018static-CMS\u2019 sites using Gatsby, Contentful, Prismic and Netlify. Much of our stack is using Node.js.\n\nIf you\u2019re that person, we\u2019d love to talk.\n\nKey success metrics\n\nYou will be successful in the role if in the first 6 months you have\n\nImplemented a data dashboard MVP web app.\nShown ability to maintain and improve our existing codebase and your code is readable, testable, and understandable six months later. \nBuilt successful working relationships across the company to support other technology-related activities.\n\nBenefits\nWhat we offer\nOpportunity to make a difference as part of the research company that works with the biggest tech brands to help the world understand developers.\nCompetitive salary\nFlexible working environment\nCome to work in a t-shirt, shorts and flip flops, or tie and a suit\nAnnual training budget to develop your skills and career\nMonthly book allowance from Amazon, on any book you like\nSpotify Premium subscription or Netflix\nPart of an entrepreneurial company that's raising the bar, and calling the trends of the developer economy\n\nIf you think a link to your LinkedIn profile or public projects is helpful then include one, but it\u2019s not required.","employmentType":"Full-time","industry":"Startups","jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","addressCountry":"Remote","addressRegion":"Remote","addressLocality":"Remote"}},"title":"Senior Software Engineer (react, Redux)","hiringOrganization":{"@type":"Organization","name":"Slashdata","sameAs":"http:\/\/www.slashdata.co","logo":"https:\/\/remoteok.io\/assets\/jobs\/29ed1fa3f63fde4c443b6919241adcbf.jpg","workHours":"Flexible","validThrough":"2018-06-21T08:54:34-07:00"}}</script>
-                </tbody>
-                <tbody>
-                   <tr data-url="/remote-jobs/66017-remote-senior-software-engineer-react-redux-slashdata" data-search="Slashdata Senior Software Engineer (react, Redux) React redux javascript mocha jest" data-company="Slashdata" data-stack="" id="job-66017" data-id="66017" data-href="/remote-jobs/66017-remote-senior-software-engineer-react-redux-slashdata" class="job job-66017 remoteok-original remoteok-featured-light remoteok-featured	" title="" style="	">
-                      <td class="image has-logo">
-                         <a class="preventLink" href="https://remoteok.io/remote-jobs/66017-remote-senior-software-engineer-react-redux-slashdata">
-                            <div class="logo" data-extension="jpg" data-original="https://remoteok.io/assets/jobs/29ed1fa3f63fde4c443b6919241adcbf.jpg" data-src="https://remoteok.io/assets/jobs/29ed1fa3f63fde4c443b6919241adcbf.jpg" itemprop="image" src="https://remoteok.io/assets/jobs/29ed1fa3f63fde4c443b6919241adcbf.jpg" data-bg="https://remoteok.io/assets/jobs/29ed1fa3f63fde4c443b6919241adcbf.jpg" style="background-image:url(&#39;https://remoteok.io/assets/jobs/29ed1fa3f63fde4c443b6919241adcbf.jpg&#39;);"></div>
-                         </a>
-                      </td>
-                      <td class="company position company_and_position">
-                         <a itemprop="url" class="preventLink" href="https://remoteok.io/remote-jobs/66017-remote-senior-software-engineer-react-redux-slashdata">
-                            <h2 itemprop="title">Senior Software Engineer (react, Redux)</h2>
-                         </a>
-                         <br>
-                         <a itemprop="hiringOrganization" itemscope="" itemtype="http://schema.org/Organization" class="companyLink" target="_blank" href="https://remoteok.io/remote-companies/slashdata">
-                            <h3 itemprop="name">Slashdata</h3>
-                         </a>
-                      </td>
-                      <td class="company position company_and_position_mobile">
-                         <a class="preventLink" target="_blank" href="https://remoteok.io/remote-jobs/66017-remote-senior-software-engineer-react-redux-slashdata">
-                            <h2>Senior Software Engineer (react, Redux)</h2>
-                         </a>
-                         <br>
-                         <a class="preventLink" target="_blank" href="https://remoteok.io/remote-companies/slashdata">
-                            <h3>Slashdata</h3>
-                         </a>
-                         <br>
-                         <a class="no-border tooltip" title="Show only react jobs" href="https://remoteok.io/remote-react-jobs">
-                            <div class="tag" itemprop="skills">
-                               <h3>
-                                  React<!--3-->
-                               </h3>
-                            </div>
-                         </a>
-                         <a class="no-border tooltip" title="Show only redux jobs" href="https://remoteok.io/remote-redux-jobs">
-                            <div class="tag" itemprop="skills">
-                               <h3>
-                                  redux<!--3-->
-                               </h3>
-                            </div>
-                         </a>
-                         <a class="no-border tooltip" title="Show only javascript jobs" href="https://remoteok.io/remote-javascript-jobs">
-                            <div class="tag" itemprop="skills">
-                               <h3>
-                                  javascript<!--3-->
-                               </h3>
-                            </div>
-                         </a>
-                         <a class="no-border tooltip" title="Show only mocha jobs" href="https://remoteok.io/remote-mocha-jobs">
-                            <div class="tag" itemprop="skills">
-                               <h3>
-                                  mocha<!--3-->
-                               </h3>
-                            </div>
-                         </a>
-                      </td>
-                   </tr>
-                <tbody>
-            </table>
-          
-         </div>
-      </div>
+<script>var basicPrice = 299; var priceForHighlightedExtra = 50; var originalUrl = '/'; var page = 'frontpage'; var pageTagTitle = ''; var allTags = ['specialist', 'Dialysis Registered Nurse', 'Neonatal Intensive Care Registered Nurse', 'Nurse Supervisor']; var sampleJobs = ['specialist', 'Dialysis Registered Nurse', 'Neonatal Intensive Care', 'Nurse Supervisor']; var stripePublicKey = 'pk_live_T0LvYdi04UxgmrfEx4LRid4q'; var tweetJob = [];</script>
+<script src="./assets/index.min.js"></script>
+<script>var sampleJobs = shuffle(sampleJobs);</script>
+<script></script>
+<div class="filter-pane opened" id="filter-pane">
+  <select class="filter filter-source" id="filter-source">
+    <option value="" selected="">Source</option>
+    <option data-filter-target="source" data-filter-type="less-than" data-filter-value="Stack Overflow">Stack Overflow</option>
+    <option data-filter-target="source" data-filter-type="less-than" data-filter-value="WFH">WFH</option>
+    <option data-filter-target="source" data-filter-type="less-than" data-filter-value="We Work Meteor">We Work Meteor</option>
+    <option data-filter-target="source" data-filter-type="less-than" data-filter-value="Remote OK">Remote OK</option>
+    <option data-filter-target="source" data-filter-type="less-than" data-filter-value="GoLang Projects">GoLang Projects</option>
+    <option data-filter-target="source" data-filter-type="less-than" data-filter-value="GitHub">GitHub</option>
+    <option value="remove-filter">✖ remove</option>
+  </select>
+  <select class="reverse filter add-filter" id="add-filter">
+    <option>✚ add filter</option>
+  </select>
+</div>
+<i class="fa fa-navicon action-expand-filter"></i>
+<div class="top">
+  <div class="remote-ok-logo">
+    <h1>
+      <a class="no-border">
+        <span class="pacifico">Nursing Jobs</span>
+      </a>
+      <a class="no-border">
+        <span class="ok">Finding your dream job has never been easier</span>
+      </a>
+    </h1>
+  </div>
+  <div class="video" style="top: 0px;">
+    <video id="videoObj" autoplay="" muted="" loop="" data-src="/assets/bg.mp4" type="video/mp4"></video>
+  </div>
+  <div class="cover"></div>
+  <div class="box">
+    <h1>let's find you
+      <em>The best nursing job in the WORLD!</em>
+    </h1>
+    <input class="search_two ui-autocomplete-input" [ngModel]="criteria" (ngModelChange)="criteria = $event" type="text" placeholder="your next job?" autocomplete="off">
+    <input class="search_two ui-autocomplete-input" [ngModel]="location" (ngModelChange)="location = $event" type="text" placeholder="Location?" autocomplete="off">
+    <button class="button" (click)="search()">Search</button>
+  </div>
+  <div class="bottom-notice">
+    <h2 class="p">The largest collection of Jobs for Digital Nurses online. Let's find you a job you can do anywhere at
+      <a href="https://remoteok.io/remote-companies">Remote Companies</a> like
+      <a href="https://remoteok.io/remote-companies/buffer">Buffer</a>,
+      <a href="https://remoteok.io/remote-companies/zapier">Zapier</a> and
+      <a href="https://remoteok.io/remote-companies/automattic">Automattic</a> who
+      <a target="_blank" href="https://www.youtube.com/watch?v=4p8a0tcJw4s">embrace the future</a>. There are 28,600+ jobs that allow you to work anywhere and live everywhere.</h2>
+  </div>
+</div>
+<div class="notice">
+  <div class="remote-ok-logo">
+    <h1>
+      <a class="no-border" href="https://remoteok.io/">
+        <span class="pacifico">Remote</span>
+      </a>
+      <a class="no-border" href="https://remoteok.io/remote-jobs">
+        <span class="ok">OK</span>
+      </a>
+    </h1>
+  </div>
+  <h2 class="p">The largest collection of Remote Jobs for Digital Nomads online. Let's find you a job you can do anywhere at
+    <a href="https://remoteok.io/remote-companies">Remote Companies</a> like
+    <a href="https://remoteok.io/remote-companies/buffer">Buffer</a>,
+    <a href="https://remoteok.io/remote-companies/zapier">Zapier</a> and
+    <a href="https://remoteok.io/remote-companies/automattic">Automattic</a> who
+    <a target="_blank" href="https://www.youtube.com/watch?v=4p8a0tcJw4s">embrace the future</a>. There are 28,600+ jobs that allow you to work anywhere and live everywhere.</h2>
+  <div class="bg"></div>
+</div>
+<div class="page">
 
+  <div class="clear"></div>
+  <div class="switcher-container">
+    <div class="switcher">
+      <div class="action-switch-jobs active">
+        <p>
+          <i class="fa fa-briefcase"></i>&nbsp; Jobs</p>
+      </div>
+      <div class="action-switch-people">
+        <p>
+          <i class="fa fa-user"></i>&nbsp; People</p>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <table id="jobsboard">
+      <tbody>
+        <tr>
+          <td colspan="999" class="heading">
+            <h2>Search Results</h2>
+          </td>
+        </tr>
+        <script type="application/ld+json">{"@context":"http://schema.org","@type":"JobPosting","datePosted":"2018-03-23T08:54:34-07:00","description":"Senior Software Engineer (React, Redux)\n\nSlashData is the leading research company in the developer economy: We help the world understand developers and developers understand the world. We survey 40,000+ developers annually - across mobile, IoT, desktop, cloud AR\/VR and machine learning - to help clients such as Microsoft, Facebook, Google and Amazon understand who developers are, what tools they love or hate and where they are going next.\n\nWe\u2019re now looking for a full-time, senior software engineer to help drive data and visual insights out of millions of developer data points. The position is fulltime, either remote or based in our Athens office (if you happen to live near). We will consider locations within 2-3 hours of Central European Time or further for candidates willing to shift their working day to have significant overlap with the other team members in Europe. Depending on your location, you will be working from your home office, a co-working space as part of a distributed team or our Athens office.\n\nWho we\u2019re looking for\n\nWhat skills we are looking for\n5+ years of experience developing web applications with modern JavaScript (ES6) frameworks\nExperience with React, Redux, webpack and related technologies\nFamiliarity with testing tools such as Mocha, Chai, Jest\nAppreciation for good UX &amp; UI design, ability to contribute to a design discussion\nBackend web API development experience, preferably with some exposure to Node.js\nExperience with AWS and other cloud providers\nExperience with a language other than JavaScript, preferably one with static types\nExperience working with relational and NoSQL databases\n\nBonus points for\nHaving built single-page web apps and server-side rendered apps\nExperience with AWS Lambda or other \u201cserverless\u201d backend architecture\nExperience with Python\nHave worked with an intermediate data layer, that sits between multiple data sources and the front-end applications\nExperience with data visualisation (e.g. using D3.js)\nAn appreciation for data and understanding of statistics\n\nWhat you\u2019ll be responsible for\n\nBuilding a custom data dashboard web app (backend in Python and frontend in React) for displaying data to clients and developers. There are lots of dashboard tools in the world, but we have fairly rare data needs and an ambition to create world-class visualisations.\nIterating on our in-house survey tool (built on AWS Lambda, React and Redux) to reach developers everywhere in the world and provide a delightful UX.\nMaintaining and enhancing our developer and client-facing websites. We\u2019ve deployed \u2018static-CMS\u2019 sites using Gatsby, Contentful, Prismic and Netlify. Much of our stack is using Node.js.\n\nIf you\u2019re that person, we\u2019d love to talk.\n\nKey success metrics\n\nYou will be successful in the role if in the first 6 months you have\n\nImplemented a data dashboard MVP web app.\nShown ability to maintain and improve our existing codebase and your code is readable, testable, and understandable six months later. \nBuilt successful working relationships across the company to support other technology-related activities.\n\nBenefits\nWhat we offer\nOpportunity to make a difference as part of the research company that works with the biggest tech brands to help the world understand developers.\nCompetitive salary\nFlexible working environment\nCome to work in a t-shirt, shorts and flip flops, or tie and a suit\nAnnual training budget to develop your skills and career\nMonthly book allowance from Amazon, on any book you like\nSpotify Premium subscription or Netflix\nPart of an entrepreneurial company that's raising the bar, and calling the trends of the developer economy\n\nIf you think a link to your LinkedIn profile or public projects is helpful then include one, but it\u2019s not required.","employmentType":"Full-time","industry":"Startups","jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","addressCountry":"Remote","addressRegion":"Remote","addressLocality":"Remote"}},"title":"Senior Software Engineer (react, Redux)","hiringOrganization":{"@type":"Organization","name":"Slashdata","sameAs":"http:\/\/www.slashdata.co","logo":"https:\/\/remoteok.io\/assets\/jobs\/29ed1fa3f63fde4c443b6919241adcbf.jpg","workHours":"Flexible","validThrough":"2018-06-21T08:54:34-07:00"}}</script>
+      </tbody>
+      <tbody *ngFor="let job of jobs; let index = index">
+        <tr data-url="/remote-jobs/66017-remote-senior-software-engineer-react-redux-slashdata" data-search="Slashdata Senior Software Engineer (react, Redux) React redux javascript mocha jest"
+          data-company="Slashdata" data-stack="" id="job-66017" data-id="66017" data-href="/remote-jobs/66017-remote-senior-software-engineer-react-redux-slashdata"
+          class="job job-66017 remoteok-original remoteok-featured-light remoteok-featured	" title="" style="	">
+          <td class="image has-logo">
+            <a class="preventLink" href="#">
+              <div class="logo" data-extension="jpg" data-original="./assets/job.png"
+                data-src="./assets/job.png" itemprop="image" src="./assets/job.png"
+                data-bg="./assets/job.png" style="background-image:url(&#39;./assets/job.png&#39;);"></div>
+            </a>
+          </td>
+          <td class="company position company_and_position">
+            <a itemprop="url" class="preventLink" href="{{job.url}}">
+              <h2 itemprop="title">{{job.position_title}}</h2>
+            </a>
+            <br>
+            <h3 itemprop="name">{{job.organization_name}}</h3>
+          </td>
+          <td class="source">
+            <a rel="nofollow" class="no-border tooltip" target="_blank" href="/l/66046">
+              <div class="apply_button no-logo">
+                <p>Save</p>
+              </div>
+            </a>
+          </td>
 
+        </tr>
+        <tbody>
+    </table>
+
+  </div>
+</div>

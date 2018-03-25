@@ -21,4 +21,15 @@ export class JobService{
       }).map((resp: Response) => resp.json())
                   
   }
+
+
+  fetchByCriteriaAndLocation(criteria: string, location: string){
+
+    let headers = new Headers();
+
+    return this.http.get(this.apiEndPoint + "+with+" + criteria + "+in+" + location , {
+        headers: headers
+    }).map((resp: Response) => resp.json())
+                  
+  }
 }
