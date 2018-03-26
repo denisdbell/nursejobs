@@ -20,7 +20,7 @@ The schematic diagram below shows the architecture of the system:
 
 ## Docker Compose
 
-Docker is used for application deployment and configuration management. The Details of how the various components of the system communicate can be viewed from the **docker-compose.yml** file, see below:
+Docker is used for application deployment and configuration management. The Details of how the various components of the system communicate can be viewed in the **docker-compose.yml** file, see below:
 
 ```
 version: '3'
@@ -83,5 +83,23 @@ Navigate to http://localhost/ and you will see the application displayed, see be
 ![alt text](https://github.com/denisdbell/nursejobs/raw/master/job_client/src/assets/search_view.png "Architecture")
 
 
+# Making code modifications
 
+Code modifcations can be made to the front end (job_client) and backend (job-api)
+
+## Making UI Modications
+
+1. Clone the repository
+```
+git clone https://github.com/denisdbell/nursejobs.git
+```
+2. Open the **nursejobs/job_client** folder in an IDE or text editor of your choice.
+
+3. Execute the following command to run the web client locally:
+```
+npm install && npm start
+```
+4. Navigate to http://lpclahost:3000 to view the application.
+
+5. When you have finished making modifications to the code, execute the **build.sh** file located in the root directory of the project. This will rebuild the project and push the docker images to the dockerhub repository.
 
