@@ -62,9 +62,9 @@ networks:
 ```
 # Running the application
 
+
 To run the application execute the following commands:
 
-**Note: You will need the latest version of docker and docker-compose installed execute these commands**
 
 1. Copy the docker-compose.yml file to a directory of your choice:
 ```
@@ -75,6 +75,8 @@ To run the application execute the following commands:
 docker-compose up
 ```
 Navigate to http://localhost/ and you will see the application displayed, see below:
+
+**Note: You will need the latest version of docker and docker-compose to execute the command above**
 
 
 ![alt text](https://github.com/denisdbell/nursejobs/raw/master/job_client/src/assets/search.png "Architecture")
