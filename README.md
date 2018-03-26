@@ -14,3 +14,8 @@ The application utilizes a mircoservcie architecture consisting of four(4) main 
 
 4. **Search.Gov API** - This API is used to retrieve nurse jobs currently being posted by the Federal, state, and local government agencies in the United States. 
 
+The schematic diagram below shows the architecture of the system:
+
+![alt text](https://github.com/denisdbell/nursejobs/raw/master/job_client/src/assets/NurseJobsArchitecture.png "Architecture")
+
+
