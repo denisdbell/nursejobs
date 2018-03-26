@@ -9,15 +9,15 @@ import { GithubService } from '../shared/github.service';
 })
 export class RepoBrowserComponent {
 
-  constructor(private router: Router, private github: GithubService) {
-  }
+ /* constructor(private router: Router, private github: GithubService) {
+  }*/
 
-  searchForOrg(orgName: string) {
+  /*searchForOrg(orgName: string) {
     this.github.getOrg(orgName)
       .subscribe(({name}) => {
         console.log(name);
         this.router.navigate(['/github', orgName]);
       });
-  }
+  }*/
 
 }

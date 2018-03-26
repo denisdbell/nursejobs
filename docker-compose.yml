@@ -1,0 +1,7 @@
+version: '3'
+services:
+  job_client:
+    image: denisdbell/job_client:latest
+    container_name: job_client
+    ports:
+     - "80:80"   

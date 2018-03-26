@@ -12,11 +12,11 @@ export class RepoDetailComponent implements OnInit {
   private repo:string;
   public repoDetails:any = {};
 
-  constructor(public github:GithubService, private route:ActivatedRoute) {
-  }
+ /* constructor(public github:GithubService, private route:ActivatedRoute) {
+  }*/
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
+    /*this.route.params.subscribe(params => {
       this.org = this.route.snapshot.parent.params['org'];
       this.repo = params['repo'] || '';
 
@@ -26,6 +26,6 @@ export class RepoDetailComponent implements OnInit {
             this.repoDetails = repoDetails;
           });
       }
-    });
+    });*/
   }
 }

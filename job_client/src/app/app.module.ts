@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core'
 import { RouterModule } from '@angular/router';
-import { rootRouterConfig } from './app.routes';
 import { AppComponent } from './app.component';
 import { GithubService } from './github/shared/github.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';

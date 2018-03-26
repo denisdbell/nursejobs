@@ -2,6 +2,8 @@ var webpack = require('webpack');
 var path = require('path');
 var webpackMerge = require('webpack-merge');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+
 
 // Webpack Config
 var webpackConfig = {
@@ -27,6 +29,10 @@ var webpackConfig = {
     new HtmlWebpackPlugin({
       template: 'src/index.html'
     }),
+
+    new CopyWebpackPlugin([
+      { from: 'src/assets', to:'assets' }
+    ])
 
   ],
 
