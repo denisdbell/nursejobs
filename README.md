@@ -4,12 +4,12 @@ Nurse Jobs is a web application which allows nurses to easily find their dream j
 
 ## Pre-requisites:
 
-If you are just interested in deploying the application the you will need:
+If you are just interested in deploying the application then you will need:
 
  - docker ver 17.x.x
  - docker-compose ver 1.19.x
  
-However, if you want to develop the application you will also need the following:
+However, if you want to develop/modify the application you will also need the following:
 
 - maven (mvn) ver 3.x
 - node ver 6.x
