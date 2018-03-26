@@ -4,7 +4,7 @@ import { Job } from "../model/Job";
 
 @Injectable()
 export class SaveJobService {
-  apiEndPointHost: string = "http://localhost:8080";
+  apiEndPointHost: string = "http://10.5.0.5:8080";
 
   constructor(private http: Http) {}
 
