@@ -2,11 +2,25 @@
 
 Nurse Jobs is a web application which allows nurses to easily find their dream jobs.
 
+## Pre-requisites:
+
+If you are just interested in deploying the application the you will need:
+
+ - docker ver 17.x.x
+ - docker-compose ver 1.19.x
+ 
+However, if you want to develop the application you will also need the following:
+
+- maven (mvn) ver 3.x
+- node ver 6.x
+- npm ver 3.x
+- java 8.x
+
 ## Architecture Overview
 
 The application utilizes a mircoservcie architecture consisting of four(4) main components:
 
-1. **Web Client** - This is an Angular2 web client which communicates with two restful endpoints; the Job API and the **search.gov API**.
+1. **Web Client** - This is an Angular2 web client which communicates with two restful endpoints; the local **Job API** and the **search.gov API**.
 
 2. **Job API** - This SpringBoot based Restful API application. It is utilized to faciliate the retrieval and saving of jobs  obtained from the **search.gov API**.
 
@@ -20,7 +34,7 @@ The schematic diagram below shows the architecture of the system:
 
 ## Docker Compose
 
-Docker is used for application deployment and configuration management. The Details of how the various components of the system communicate can be viewed in the **docker-compose.yml** file, see below:
+Docker is used for application deployment and configuration management. The Details of how the various components of the system are configured can be viewed in the **docker-compose.yml** file, see below:
 
 ```
 version: '3'
@@ -60,7 +74,7 @@ networks:
      config:
        - subnet: 10.5.0.0/16
 ```
-# Running the application
+# Running The Application
 
 
 To run the application execute the following commands:
@@ -76,14 +90,11 @@ docker-compose up
 ```
 Navigate to http://localhost/ and you will see the application displayed, see below:
 
-**Note: You will need the latest version of docker and docker-compose to execute the command above**
-
-
 ![alt text](https://github.com/denisdbell/nursejobs/raw/master/job_client/src/assets/search.png "Architecture")
 ![alt text](https://github.com/denisdbell/nursejobs/raw/master/job_client/src/assets/search_view.png "Architecture")
 
 
-# Making code modifications
+# Making Code Modifications
 
 Code modifcations can be made to the front end (job_client) and backend (job-api)
 
@@ -99,7 +110,26 @@ git clone https://github.com/denisdbell/nursejobs.git
 ```
 npm install && npm start
 ```
-4. Navigate to http://lpclahost:3000 to view the application.
+4. Navigate to http://localhost:3000 to view the application.
 
 5. When you have finished making modifications to the code, execute the **build.sh** file located in the root directory of the project. This will rebuild the project and push the docker images to the dockerhub repository.
+
+## Making Backend Modications
+
+1. Clone the repository
+```
+git clone https://github.com/denisdbell/nursejobs.git
+```
+2. Open the **nursejobs/job_api** folder in an IDE or text editor of your choice.
+
+3. Execute the following command to run the job api locally:
+```
+mvn spring-boot:run
+```
+
+4. Navigate to http://localhost:8080 to see if the application is up and running.
+
+5. When you have finished making modifications to the code, execute the **build.sh** file located in the root directory of the project. This will rebuild the project and push the docker images to the dockerhub repository.
+
+
 
