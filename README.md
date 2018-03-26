@@ -60,3 +60,20 @@ networks:
      config:
        - subnet: 10.5.0.0/16
 ```
+# Running the application
+
+To run the application execute the following commands:
+
+1. Copy the docker-compose.yml file to a directory of your choice:
+```
+ curl https://raw.githubusercontent.com/denisdbell/nursejobs/master/docker-compose.yml > docker-compose.yml  
+```
+2. Run **docker-compose up**
+```
+docker-compose up
+```
+Navigate to http://localhost/ and you will see the application displayed, see below:
+
+
+
+
