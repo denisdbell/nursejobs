@@ -64,6 +64,8 @@ networks:
 
 To run the application execute the following commands:
 
+**Note: You will need the latest version of docker and docker-compose installed execute these commands**
+
 1. Copy the docker-compose.yml file to a directory of your choice:
 ```
  curl https://raw.githubusercontent.com/denisdbell/nursejobs/master/docker-compose.yml > docker-compose.yml  
@@ -73,6 +75,10 @@ To run the application execute the following commands:
 docker-compose up
 ```
 Navigate to http://localhost/ and you will see the application displayed, see below:
+
+
+![alt text](https://github.com/denisdbell/nursejobs/raw/master/job_client/src/assets/search.png "Architecture")
+![alt text](https://github.com/denisdbell/nursejobs/raw/master/job_client/src/assets/search_view.png "Architecture")
 
 
 
