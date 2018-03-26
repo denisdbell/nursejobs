@@ -18,4 +18,45 @@ The schematic diagram below shows the architecture of the system:
 
 ![alt text](https://github.com/denisdbell/nursejobs/raw/master/job_client/src/assets/NurseJobsArchitecture.png "Architecture")
 
+## Docker Compose
 
+Docker is used for application deployment and configuration management. The Details of how the various components of the system communicate can be viewed from the **docker-compose.yml** file, see below:
+
+```
+version: '3'
+services:
+  job_client:
+    image: denisdbell/job_client:latest
+    container_name: job_client
+    hostname: job_client
+    ports:
+     - "80:80"
+  job_api:
+    image: denisdbell/job_api:latest
+    container_name: job_api
+    hostname: job_api
+    depends_on:
+      - db
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.5
+  db:
+    image: mysql:latest 
+    container_name: db
+    hostname: db
+    environment:
+      MYSQL_USER: nurse
+      MYSQL_DATABASE: nursejobs_db
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_PASSWORD: password
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.6
+
+networks:
+  vpcbr:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 10.5.0.0/16
+```
